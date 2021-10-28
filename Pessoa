@@ -9,8 +9,7 @@ public class Pessoa {
     public String aniversario;
     public String url;
     
-    public Pessoa(String nome, String email, long tel, int dia_nascimento,
-    int mes_nascimento, int ano_nascimento, String endereço, String aniversario, String url)
+    public Pessoa(String nome, String email, long tel, String endereço, String aniversario, String url)
     {
     
     this.nome = nome;
