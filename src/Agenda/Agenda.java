@@ -26,9 +26,9 @@ public class Agenda {
 					pessoa.email = s.next();
 					System.out.println("Digite o telefone");
 					pessoa.tel = s.nextLong();
-					System.out.println("Digite o endere�o");
+					System.out.println("Digite o endereco");
 					pessoa.endereco = s.next();
-					System.out.println("Digite o anivers�rio");
+					System.out.println("Digite o aniversario");
 					pessoa.aniversario = s.next();
 					System.out.println("Digite as redes sociais");
 					pessoa.url = s.next();
@@ -40,30 +40,30 @@ public class Agenda {
 					
 			} while (continuar.equals("Sim"));
 			
-			} else if(op�ao.equals("Listar")) {
+			} else if(opcao.equals("Listar")) {
 				
 				for(int j = 0; j < 100; j++) {
 					System.out.println("Nome: " + nome[j] + "Email: " + email[j]+ "Telefone:" + tel[j]
-										+ "Endere�o: " + endere�o[i]
-												+ "Anivers�rio :" + aniversario[j] + "Redes sociais: " + url[j]);
+										+ "Endereco: " + endereco[i]
+												+ "Aniversario :" + aniversario[j] + "Redes sociais: " + url[j]);
 				}
 			}
 
-			else if(op�ao.equals("Excluir")) {
+			else if(opcao.equals("Excluir")) {
 				
 				for()
 			}
 			
-			else if(op�ao.equals("Sair")) {
+			else if(opcao.equals("Sair")) {
 				System.out.println("Programa finalizado.");
 				return;
 			
 			}else {
-				System.out.println("Op��o inv�lida. Tente novamente");
+				System.out.println("Opcao invalida. Tente novamente");
 				break;
 					
 				}
 			
-		} while (!op�ao.equals("Sair"));
+		} while (!opcao.equals("Sair"));
 	}
 }
