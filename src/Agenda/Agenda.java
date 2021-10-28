@@ -11,6 +11,7 @@ public class Agenda {
 		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		String opcao = "";
 		String continuar = "";
+		String excluir = "";
 		int i = 0;
 		
 		do {
@@ -50,8 +51,11 @@ public class Agenda {
 			}
 
 			else if(opcao.equals("Excluir")) {
-				
-				for()
+				System.out.println("Qual contato voce deseja excluir?");
+				if(excluir.equals(nome)) {
+					while(!continuar.equals("Não"));
+					pessoa.remove(excluir);
+				}
 			}
 			
 			else if(opcao.equals("Sair")) {
