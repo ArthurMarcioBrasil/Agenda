@@ -45,7 +45,7 @@ public class Agenda {
 				
 				for(int j = 0; j < 100; j++) {
 					System.out.println("Nome: " + nome[j] + "Email: " + email[j]+ "Telefone:" + tel[j]
-										+ "Endereco: " + endereco[i]
+										+ "Endereco: " + endereco[j]
 												+ "Aniversario :" + aniversario[j] + "Redes sociais: " + url[j]);
 				}
 			}
