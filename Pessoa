@@ -1,19 +1,17 @@
 package Agenda;
 
 public class Pessoa {
-    private String nome;
-    private String email;
-    private long tel;
-    private String endereço;
-    private String aniversario;
-    private String url;
-
-    public Pessoa(){
-
-    }
+    
+	public String nome;
+    public String email;
+    public long tel;
+    public String endereço;
+    public String aniversario;
+    public String url;
     
     public Pessoa(String nome, String email, long tel, int dia_nascimento,
-    int mes_nascimento, int ano_nascimento, String endereço, String aniversario, String url){
+    int mes_nascimento, int ano_nascimento, String endereço, String aniversario, String url)
+    {
     
     this.nome = nome;
     this.endereço = endereço;
@@ -21,7 +19,7 @@ public class Pessoa {
     this.email = email; 
     this.aniversario = aniversario;
     this.url = url;
-        }
+    }
 
 
 public String getNome(){
