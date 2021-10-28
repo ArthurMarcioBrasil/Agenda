@@ -1,58 +1,68 @@
 package Agenda;
 
 import java.util.Scanner;
-import java.util.Date;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 public class Agenda {
 
 	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
-	    Pessoa[] pessoas = new Pessoa[100];
-	    public void inserpessoa(){
-	        int x; 
-	    	for (int i = 0; i < 100; i++) {               
-	            System.out.println("Digite o nome da pessoa: ");
-	            Pessoa.getNome()[i] = in.next();
-	            System.out.println("Digite o telefone da pessoa: ");
-	            Pessoa.getTel[i] = in.nextLong();
-	            System.out.println("Digite o email da pessoa: ");
-	            Pessoa.getEmail[i] = in.next();
-	            System.out.println("Digite o aniversário da pessoa");
-	            Pessoa.getAniversario[i] = in.next();
-	            System.out.println("Digite as redes sociais da pessoa");
-	            Pessoa.getUrl[i] = in.next();
-	            System.out.println("Digite 1 para continuar ou 0 para sair: ");
-	            x = in.nextInt();
-	            if(x == 0){
-	                break;
-	           }
-	          }
-	        }
-	    public void consultatel(){
-	         String nome;
-	         System.out.println("Digite o nome da pessoa: ");
-	         nome = in.next();
-	         for (int i = 0; i < Pessoa.nome.length; i++) {
-	            if(nome.equalsIgnoreCase(pessoas.nome[i])){
-	               int ind = i;
-	             for (int j = 0; j < pessoas.tel.length; j++) {
-	               System.out.println("Tel: "+pessoas.tel[ind]);
-	               break;
-	             }
-	            System.out.println("Digite 1 para continuar ou 0 para sair: ");
-	            int x = in.nextInt();
-	            if(x == 0){
-	            menu.menu();
-	            break;
-	            }
-	           }else{
-	               System.out.println("A pessoa não está cadastrada!");
-	               break;
-	           }            
-	        } 
-	    }
+		Scanner s = new Scanner(System.in);
+		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
+		String opçao = "";
+		String continuar = "";
+		int i = 0;
+		
+		do {
+			System.out.println("Escolha a opção:\n Incluir --- Listar --- Excluir --- Sair");
+			opçao = s.nextLine();
+			
+			if(opçao.equals("Incluir")) {
+				do {
+					
+					Pessoa pessoa = new Pessoa();
+					System.out.println("Digite o nome");
+					pessoa.nome = s.next();
+					System.out.println("Digite o email");
+					pessoa.email = s.next();
+					System.out.println("Digite o telefone");
+					pessoa.tel = s.nextLong();
+					System.out.println("Digite o endereço");
+					pessoa.endereço = s.next();
+					System.out.println("Digite o aniversário");
+					pessoa.aniversario = s.next();
+					System.out.println("Digite as redes sociais");
+					pessoa.url = s.next();
+					System.out.println("Deseja continuar?");
+					continuar = s.nextLine();
+					listaPessoa.add(pessoa);
+					
+					i++;
+					
+			} while (continuar.equals("Sim"));
+			
+			} else if(opçao.equals("Listar")) {
+				
+				for(int i = 0; i < 100; i++) {
+					System.out.println("Nome: " + nome[i] + "Email: " email[i]Telefone: " + tel[i]
+										+ "Endereço: " + endereço[i]
+												+ "Aniversário :" + aniversario[i + "Redes sociais: " + url[i]);
+				}
+			}
+
+			else if(opçao.equals("Excluir")) {
+	
+			}
+			
+			else if(opçao.equals("Sair")) {
+				System.out.println("Programa finalizado.");
+				return;
+			
+			}else {
+				System.out.println("Opção inválida. Tente novamente");
+				break;
+					
+				}
+			
+		} while (!opçao.equals("Sair"));
 	}
-	    
+}
