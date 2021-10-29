@@ -51,13 +51,17 @@ public class Agenda {
 			}
 
 			else if(opcao.equals("Excluir")) {
-				System.out.println("Qual contato voce deseja excluir?");
-				excluir = s.next();
-				if(excluir.equals(pessoa.nome)) {
-					while(!continuar.equals("Não"));
-					listaPessoa.remove(excluir);
-				}
-			}
+				do {
+					
+					System.out.println("Quem você deseja excluir?");
+					excluir = s.next();
+					System.out.println("Tem certeza?");
+				} while (continuar.equals("Não"));
+					if(excluir.equals(pessoa.nome)) {
+						listaPessoa.remove(excluir);
+						System.out.println("Contato excluído.");
+					
+					}
 			
 			else if(opcao.equals("Sair")) {
 				System.out.println("Programa finalizado.");
