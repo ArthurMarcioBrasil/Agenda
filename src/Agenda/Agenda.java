@@ -14,6 +14,7 @@ public class Agenda {
 		String opcao = "";
 		String continuar = "";
 		String continuar1 = "";
+		int i = 0;
 		String excluir = "";
 		
 		do {
