@@ -4,12 +4,12 @@ public class Pessoa {
     
 	public String nome;
     public String email;
-    public long tel;
+    public String tel;
     public String endereco;
     public String aniversario;
     public String url;
     
-    public Pessoa(String nome, String email, long tel, String endereco, String aniversario, String url)
+    public Pessoa(String nome, String email, String tel, String endereco, String aniversario, String url)
     {
     
     this.nome = nome;
@@ -36,10 +36,10 @@ public void setEndereco(String endereco){
     this.endereço = endereco;
 }
 
-public long getTel(){
+public String getTel(){
     return tel;
 }
-public void setTel(long tel){
+public void setTel(String tel){
     this.tel = tel;
 }        
 
