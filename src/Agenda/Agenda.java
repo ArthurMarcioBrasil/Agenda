@@ -44,17 +44,18 @@ public class Agenda {
 			} else if(opcao.equals("Listar")) {
 				
 				for(int j = 0; j < 100; j++) {
-					System.out.println("Nome: " + nome[j] + "Email: " + email[j]+ "Telefone:" + tel[j]
-										+ "Endereco: " + endereco[j]
-												+ "Aniversario :" + aniversario[j] + "Redes sociais: " + url[j]);
+					System.out.println("Nome: " + pessoa.nome[j] + "Email: " + pessoa.email[j]+ "Telefone:" + pessoa.tel[j]
+										+ "Endereco: " + pessoa.endereco[j]
+												+ "Aniversario :" + pessoa.aniversario[j] + "Redes sociais: " + pessoa.url[j]);
 				}
 			}
 
 			else if(opcao.equals("Excluir")) {
 				System.out.println("Qual contato voce deseja excluir?");
-				if(excluir.equals(nome)) {
+				excluir = s.next();
+				if(excluir.equals(pessoa.nome)) {
 					while(!continuar.equals("Não"));
-					pessoa.remove(excluir);
+					listaPessoa.remove(excluir);
 				}
 			}
 			
