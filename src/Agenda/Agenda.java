@@ -67,11 +67,11 @@ public class Agenda {
 					}
 			else if(opcao.equals("Sair")) {
 				System.out.println("Programa finalizado.");
-				return;
+				break;
 			
 			}else {
 				System.out.println("Opcao invalida. Tente novamente");
-				break;
+				return;
 					
 				}
 			
