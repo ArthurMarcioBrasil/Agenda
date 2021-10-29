@@ -36,35 +36,46 @@ public class Agenda {
 					pessoa.aniversario = s.next();
 					System.out.println("Digite as redes sociais");
 					pessoa.url = s.next();
+					listaPessoa.add(pessoa);
+					i++;
 					System.out.println("Deseja continuar?");
 					continuar = s.nextLine();
-					listaPessoa.add(pessoa);
-					
-					i++;
 					
 			} while (continuar.equals("Sim"));
+				
+				return;
 			
 			} else if(opcao.equals("Listar")) {
 				
 				for(Pessoa pessoas:listaPessoa) {
-						System.out.println("Nome: " + pessoa.nome + "\nEmail: " + pessoa.email+ "\nTelefone:" + pessoa.email
+						System.out.println("Nome: " + pessoa.nome + "\nEmail: " + pessoa.email+ "\nTelefone:" 
+											+ pessoa.email
 											+ "\nEndereco: " + pessoa.endereco
-													+ "\nAniversario :" + pessoa.aniversario + "\nRedes sociais: " + pessoa.url);
+											+ "\nAniversario :" + pessoa.aniversario 
+											+ "\nRedes sociais: " + pessoa.url);
 				}
-			}
-
-			else if(opcao.equals("Excluir")) {
 				
-				do {
+				return;
+			
+				
+			} else if(opcao.equals("Excluir")) {
 					
 					System.out.println("Quem você deseja excluir?");
 					excluir = s.next();
-					System.out.println("Tem certeza?");
-				} while (continuar1.equals("Não"));
-					if(excluir.equals(pessoa.nome)) {
+					System.out.println("Tem certeza? S (Sim) --- N (Não)");
+					continuar1 = s.next();
+					if(continuar1.equals("N")) {
+						return;
+					}else if(continuar1.equals("S")) {
+						if(excluir.equals(pessoa.nome)) {
 						listaPessoa.remove(excluir);
 						System.out.println("Contato excluído.");
+						} else {
+							System.out.println("Contato não encontrado");
+						}
+						return;
 					}
+					
 			else if(opcao.equals("Sair")) {
 				System.out.println("Programa finalizado.");
 				break;
