@@ -14,7 +14,6 @@ public class Agenda {
 		String opcao = "";
 		String continuar = "";
 		String continuar1 = "";
-		int i = 0;
 		String excluir = "";
 		
 		do {
@@ -37,7 +36,6 @@ public class Agenda {
 					System.out.println("Digite as redes sociais");
 					pessoa.url = s.next();
 					listaPessoa.add(pessoa);
-					i++;
 					System.out.println("Deseja continuar?");
 					continuar = s.nextLine();
 					
