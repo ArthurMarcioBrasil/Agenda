@@ -9,8 +9,8 @@ public class Agenda {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		Pessoa pessoa = new Pessoa();
+		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		String opcao = "";
 		String continuar = "";
 		String continuar1 = "";
@@ -46,11 +46,11 @@ public class Agenda {
 			} else if(opcao.equals("Listar")) {
 				
 				for(Pessoa pessoas:listaPessoa) {
-						System.out.println("Nome: " + pessoa.nome + "\nEmail: " + pessoa.email+ "\nTelefone:" 
-											+ pessoa.email
-											+ "\nEndereco: " + pessoa.endereco
-											+ "\nAniversario :" + pessoa.aniversario 
-											+ "\nRedes sociais: " + pessoa.url);
+						System.out.println("Nome: " + pessoas.nome + "\nEmail: " + pessoas.email+ "\nTelefone:" 
+											+ pessoas.email
+											+ "\nEndereco: " + pessoas.endereco
+											+ "\nAniversario :" + pessoas.aniversario 
+											+ "\nRedes sociais: " + pessoas.url);
 				}
 				
 				return;
@@ -64,7 +64,7 @@ public class Agenda {
 					continuar1 = s.next();
 					if(continuar1.equals("N")) {
 						return;
-					}else if(continuar1.equals("S")) {
+					} else if(continuar1.equals("S")) {
 						if(excluir.equals(pessoa.nome)) {
 						listaPessoa.remove(excluir);
 						System.out.println("Contato excluído.");
@@ -72,9 +72,9 @@ public class Agenda {
 							System.out.println("Contato não encontrado");
 						}
 						return;
-					}
 					
-			else if(opcao.equals("Sair")) {
+					
+			} else if(opcao.equals("Sair")) {
 				System.out.println("Programa finalizado.");
 				break;
 			
