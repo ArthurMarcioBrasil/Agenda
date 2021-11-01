@@ -1,4 +1,4 @@
-package Agenda;
+package sdg;
 
 import java.util.Scanner;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ public class Agenda {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		Pessoa pessoa = new Pessoa();
+		Pessoa p = new Pessoa();
 		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
 		String opcao = "";
 		String continuar = "";
@@ -20,71 +20,82 @@ public class Agenda {
 			System.out.println("Escolha a opção:\n Incluir ----------- Listar ----------- Excluir ----------- Sair");
 			opcao = s.nextLine();
 			
-			if(opcao.equals("Incluir")) {
+			switch (opcao) {
+			
+				case "Incluir":
 				do {
-					
-					System.out.println("Digite o nome");
-					pessoa.nome = s.next();
-					System.out.println("Digite o email");
-					pessoa.email = s.next();
-					System.out.println("Digite o telefone");
-					pessoa.tel = s.next();
-					System.out.println("Digite o endereco");
-					pessoa.endereco = s.next();
-					System.out.println("Digite o aniversario");
-					pessoa.aniversario = s.next();
-					System.out.println("Digite as redes sociais");
-					pessoa.url = s.next();
-					listaPessoa.add(pessoa);
-					System.out.println("Deseja continuar?");
-					continuar = s.nextLine();
-					
-			} while (continuar.equals("Sim"));
-				
-				return;
+					System.out.print("Digite o nome: ");
+					p.nome = s.next();
+					System.out.print("Digite o email: ");
+					p.email = s.next();
+					System.out.print("Digite o telefone: ");
+					p.tel = s.next();
+					System.out.print("Digite o endereco: ");
+					p.endereco = s.next();
+					System.out.print("Digite o aniversario: ");
+					p.aniversario = s.next();
+					System.out.print("Digite as redes sociais: ");
+					p.url = s.next();
+					listaPessoa.add(p);
+					System.out.print("Deseja continuar? ");
+					continuar = s.next();
+				} while (continuar.equals("Sim"));
+
+				break;
 			
-			} else if(opcao.equals("Listar")) {
-				
-				for(Pessoa pessoas:listaPessoa) {
-						System.out.println("Nome: " + pessoas.nome + "\nEmail: " + pessoas.email+ "\nTelefone:" 
-											+ pessoas.email
-											+ "\nEndereco: " + pessoas.endereco
-											+ "\nAniversario :" + pessoas.aniversario 
-											+ "\nRedes sociais: " + pessoas.url);
-				}
-				
-				return;
-			
-				
-			} else if(opcao.equals("Excluir")) {
+
+				case "Listar":
+					for(int i = 0; i < listaPessoa.size(); i++) {
+						System.out.println("Nome: " + p.nome + "\nEmail: " 
+							+ p.email+ "\nTelefone: " 
+							+ p.email
+							+ "\nEndereco: " + p.endereco
+							+ "\nAniversario: " + p.aniversario 
+							+ "\nRedes sociais: " + p.url);
+						}
 					
+					break;
+				
+					
+				case "Excluir":
 					System.out.println("Quem você deseja excluir?");
 					excluir = s.next();
 					System.out.println("Tem certeza? S (Sim) --- N (Não)");
 					continuar1 = s.next();
 					if(continuar1.equals("N")) {
 						return;
-					} else if(continuar1.equals("S")) {
-						if(excluir.equals(pessoa.nome)) {
+					}else if(continuar1.equals("S")) {
+						if(excluir.equals(p.nome)) {
 						listaPessoa.remove(excluir);
 						System.out.println("Contato excluído.");
 						} else {
 							System.out.println("Contato não encontrado");
+							}
 						}
-						return;
 					
+					break;
+				
 					
-			} else if(opcao.equals("Sair")) {
-				System.out.println("Programa finalizado.");
-				break;
-			
-			}else {
-				System.out.println("Opcao invalida. Tente novamente");
-				return;
+				case "Sair":
+					System.out.println("Programa finalizado.");
+					return;
+				
+				
+				case "a":
+					System.out.println(p.nome);
+					System.out.println(p.email);
+					break;
+
+
+				default:
+					System.out.println("Opcao invalida. Tente novamente");
+					break;
+						
+					}
+
 					
-				}
-			
-			}	}while (!opcao.equals("Sair"));
+			}while (!opcao.equals("Sair"));
 	}
 }
+
 	
