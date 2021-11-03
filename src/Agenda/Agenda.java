@@ -1,16 +1,15 @@
-package sdg;
+package Agenda;
 
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.List;
 
 
 public class Agenda {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		Pessoa p = new Pessoa();
 		ArrayList<Pessoa> listaPessoa = new ArrayList<Pessoa>();
+		Pessoa p = new Pessoa();
 		String opcao = "";
 		String continuar = "";
 		String continuar1 = "";
@@ -66,7 +65,7 @@ public class Agenda {
 						return;
 					}else if(continuar1.equals("S")) {
 						if(excluir.equals(p.nome)) {
-						listaPessoa.remove(excluir);
+						listaPessoa.remove(p);
 						System.out.println("Contato excluído.");
 						} else {
 							System.out.println("Contato não encontrado");
