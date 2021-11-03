@@ -64,7 +64,7 @@ public class Agenda {
 					if(continuar1.equals("N")) {
 						return;
 					}else if(continuar1.equals("S")) {
-						if(excluir.equals(p.nome)) {
+						if(excluir.equals(excluir)) {
 						listaPessoa.remove(p);
 						System.out.println("Contato excluído.");
 						} else {
