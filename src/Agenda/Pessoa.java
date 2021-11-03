@@ -1,8 +1,7 @@
 package Agenda;
 
 public class Pessoa {
-    
-	public String nome;
+    public String nome;
     public String email;
     public String tel;
     public String endereco;
