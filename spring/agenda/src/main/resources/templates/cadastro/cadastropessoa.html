@@ -1,21 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
+<link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
-<form action="cadastrarpessoa" method="post">
 
+<form action="salvarpessoa" method="POST" th:object="${pessoaobj}">
+	<label>ID</label>
+	<input name="id" th:field="*{id}" readonly="readonly">
 	<label>Nome</label>
-	<input nome="nome">
+	<input name="nome" th:field="*{nome}">
 	<label>Idade</label>
-	<input nome="idade">
+	<input name="idade" th:field="*{idade}">
 	<label>Email</label>
-	<input nome="email">
+	<input name="email" th:field="*{email}">
 	<label>Telefone</label>
-	<input nome="telefone">
-	<input type="submit" value="Salvar">
+	<input name="telefone" th:field="*{telefone}">
+	<label>Redes Sociais</label>
+	<input name="redesSociais" th:field="*{redesSociais}">
+	<input class="waves-effect waves-light btn" type="submit" value="Salvar">
 </form>
+
+<a href="/listapessoas">Lista de contatos</a>
+
+<table>
+	<tr th:each = "pessoa : ${pessoas}">
+	<td th:text ="${pessoa.id}"></td>
+	<td th:text ="${pessoa.nome}"></td>
+	<td th:text ="${pessoa.idade}"></td>
+	<td th:text ="${pessoa.email}"></td>
+	<td th:text ="${pessoa.telefone}"></td>
+	<td th:text ="${pessoa.redesSociais}"></td>
+	<td><a th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Editar</a></td>
+	</tr>
+</table>
+
+
+<script type="text/javascript" src="/materialize/js/materialize.js"></script>
+<script type="text/javascript" src="/materialize/js/materialize.min.js"></script>
+
+
 </body>
 </html>

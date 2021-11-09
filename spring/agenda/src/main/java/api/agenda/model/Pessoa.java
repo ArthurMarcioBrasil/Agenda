@@ -19,18 +19,22 @@ public class Pessoa implements Serializable {
 	private String nome;
 	private int idade;
 	private String email;
-	private Long telefone;
+	private String telefone;
+	private String redesSociais;
 	
-	
+
 	public Long getId() {
 		return id;
 	}
+	
 	public void setId(Long id) {
 		this.id = id;
 	}
+	
 	public String getNome() {
 		return nome;
 	}
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -38,6 +42,7 @@ public class Pessoa implements Serializable {
 	public int getIdade() {
 		return idade;
 	}
+	
 	public void setIdade(int idade) {
 		this.idade = idade;
 	}
@@ -45,14 +50,24 @@ public class Pessoa implements Serializable {
 	public String getEmail() {
 		return email;
 	}
+	
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Long getTelefone() {
+	
+	public String getTelefone() {
 		return telefone;
 	}
-	public void setTelefone(Long telefone) {
+	
+	public void setTelefone(String telefone) {
 		this.telefone = telefone;
 	}
 	
+	public String getRedesSociais() {
+		return redesSociais;
+	}
+
+	public void setRedesSociais(String redesSociais) {
+		this.redesSociais = redesSociais;
+	}
 }
