@@ -1,5 +1,7 @@
 package api.agenda.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,7 +12,6 @@ import org.springframework.web.servlet.ModelAndView;
 
 import api.agenda.model.Pessoa;
 import api.agenda.repository.PessoaRepository;
-import net.bytebuddy.dynamic.DynamicType.Builder.FieldDefinition.Optional;
 
 @Controller
 public class PessoaController {
@@ -55,12 +56,24 @@ public class PessoaController {
 		
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		
-		java.util.Optional<Pessoa> pessoa = pessoaRepository.findById(idpessoa);
+		Optional<Pessoa> pessoa = pessoaRepository.findById(idpessoa);
 		modelAndView.addObject("pessoaobj", pessoa.get());
 		
 		return modelAndView;
 		
 	}
+	
+	@GetMapping("/excluirpessoa/{idpessoa}")
+	public ModelAndView excluir(@PathVariable("idpessoa") Long idpessoa) {
+		
+		pessoaRepository.deleteById(idpessoa);
+		
+		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
+		modelAndView.addObject("pessoaobj", pessoaRepository.findAll());
+		modelAndView.addObject("pessoaobj", new Pessoa());
+		 
+		return modelAndView;
+		
+	}
 
 }
-
