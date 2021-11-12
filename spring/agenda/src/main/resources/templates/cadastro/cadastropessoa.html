@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Agenda online</title>
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.css"  media="screen,projection"/>
 <link type="text/css" rel="stylesheet" href="/materialize/css/materialize.min.css"  media="screen,projection"/>
 </head>
 <body>
+
 
 <form action="salvarpessoa" method="POST" th:object="${pessoaobj}">
 	<label>ID</label>
@@ -26,7 +27,6 @@
 	<input class="waves-effect waves-light btn" type="submit" value="Salvar">
 </form>
 
-<a class="white-text" href="/listapessoas">Lista de contatos</a>
 
 <table class ="centered">
 	<thead>	
@@ -39,7 +39,6 @@
 	  		<th>Redes sociais</th>
 	  	</tr>
 	</thead>
-	
 	<tbody>
 		<tr th:each = "pessoa : ${pessoas}">
 		<td th:text ="${pessoa.id}"></td>

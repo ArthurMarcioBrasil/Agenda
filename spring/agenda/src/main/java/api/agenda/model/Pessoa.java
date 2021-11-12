@@ -1,11 +1,12 @@
 package api.agenda.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
+
 
 @Entity
 public class Pessoa implements Serializable {
@@ -17,7 +18,7 @@ public class Pessoa implements Serializable {
 	
 	private Long id;
 	private String nome;
-	private int idade;
+	private String idade;
 	private String email;
 	private String telefone;
 	private String redesSociais;
@@ -39,11 +40,11 @@ public class Pessoa implements Serializable {
 		this.nome = nome;
 	}
 	
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 	
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 	
