@@ -5,6 +5,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 
 
@@ -15,12 +18,19 @@ public class Pessoa implements Serializable {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	
 	private Long id;
+	
+	@NotEmpty(message="Insira um nome")
 	private String nome;
-	private String idade;
+	
+	private int idade;
+	
+	@Pattern(regexp="^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", message="Insira um email válido")
 	private String email;
+	
+	@Pattern(regexp="^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message="Insira um telefone válido")
 	private String telefone;
+	
 	private String redesSociais;
 	
 
@@ -40,11 +50,11 @@ public class Pessoa implements Serializable {
 		this.nome = nome;
 	}
 	
-	public String getIdade() {
+	public int getIdade() {
 		return idade;
 	}
 	
-	public void setIdade(String idade) {
+	public void setIdade(int idade) {
 		this.idade = idade;
 	}
 	
