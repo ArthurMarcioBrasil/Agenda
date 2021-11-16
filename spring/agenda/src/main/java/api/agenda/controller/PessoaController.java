@@ -6,9 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import api.agenda.model.Pessoa;
 import api.agenda.repository.PessoaRepository;
 
@@ -75,7 +78,12 @@ public class PessoaController {
 	
 	}
 	
-		
+	@PostMapping("**/filtrarpessoa")
+	public ModelAndView filtrar(@RequestParam("nomefiltro") String nomefiltro) {
+		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
+		modelAndView.addObject("pessoas", pessoaRepository.findPessoaByName(nomefiltro));
+		modelAndView.addObject("pessoaobj", new Pessoa());
+		return modelAndView;
+	}
+
 }
-
-
