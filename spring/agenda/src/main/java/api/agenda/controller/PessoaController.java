@@ -102,6 +102,9 @@ public class PessoaController {
 		ModelAndView modelAndView = new ModelAndView("cadastro/cadastropessoa");
 		modelAndView.addObject("pessoaobj", pessoaRepository.findAll());
 		modelAndView.addObject("pessoaobj", new Pessoa());
+		Iterable<Pessoa> pessoaIt = pessoaRepository.findAll();
+		modelAndView.addObject("pessoas", pessoaIt);
+		modelAndView.addObject("pessoaobj", new Pessoa());
 		 
 		return modelAndView;
 	

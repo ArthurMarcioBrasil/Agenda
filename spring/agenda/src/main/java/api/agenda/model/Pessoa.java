@@ -21,7 +21,8 @@ public class Pessoa implements Serializable {
 	@NotEmpty(message="Insira um nome")
 	private String nome;
 	
-	private int idade;
+	@Pattern(regexp="[0-9]{2}", message="Insira uma idade válida")
+	private String idade;
 	
 	@Pattern(regexp="^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", message="Insira um email válido")
 	private String email;
@@ -48,11 +49,11 @@ public class Pessoa implements Serializable {
 		this.nome = nome;
 	}
 	
-	public int getIdade() {
+	public String getIdade() {
 		return idade;
 	}
 	
-	public void setIdade(int idade) {
+	public void setIdade(String idade) {
 		this.idade = idade;
 	}
 	
