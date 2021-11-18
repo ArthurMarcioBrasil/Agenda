@@ -1,12 +1,15 @@
 package api.agenda.model;
 
 import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
 import org.hibernate.validator.constraints.URL;
 
 
@@ -22,19 +25,22 @@ public class Pessoa implements Serializable {
 	@NotEmpty(message="Insira um nome")
 	private String nome;
 	
+	@NotEmpty(message="Insira ua idade")
 	@Pattern(regexp="[0-9]{2}", message="Insira uma idade válida")
 	private String idade;
 	
-	@NotEmpty(message="Insira um endereço")
-	private String endereço;
+	@NotEmpty(message="Insira o endereço")
+	private String endereco;
 	
+	@NotEmpty(message="Insira o email")
 	@Pattern(regexp="^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", message="Insira um email válido")
 	private String email;
 	
+	@NotEmpty(message="Insira o telefone")
 	@Pattern(regexp="^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message="Insira um telefone válido")
 	private String telefone;
 	
-	@URL(protocol="https", host="[facebook,twitter,github,instagram]", message="Insira uma URL válida")
+	@URL(protocol="https", host="{facebook, twitter, github}", message="Insira uma URL válida")
 	private String redesSociais;
 	
 
@@ -58,12 +64,12 @@ public class Pessoa implements Serializable {
 		return idade;
 	}
 	
-	public String getEndereço() {
-		return endereço;
+	public String getEndereco() {
+		return endereco;
 	}
 
-	public void setEndereço(String endereço) {
-		this.endereço = endereço;
+	public void setEndereco(String endereco) {
+		this.endereco = endereco;
 	}
 
 	public void setIdade(String idade) {
