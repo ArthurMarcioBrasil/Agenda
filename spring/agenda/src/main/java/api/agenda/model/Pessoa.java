@@ -7,6 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
+import org.hibernate.validator.constraints.URL;
 
 
 @Entity
@@ -24,12 +25,16 @@ public class Pessoa implements Serializable {
 	@Pattern(regexp="[0-9]{2}", message="Insira uma idade válida")
 	private String idade;
 	
+	@NotEmpty(message="Insira um endereço")
+	private String endereço;
+	
 	@Pattern(regexp="^[\\w!#$%&’*+/=?`{|}~^-]+(?:\\.[\\w!#$%&’*+/=?`{|}~^-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,6}$", message="Insira um email válido")
 	private String email;
 	
 	@Pattern(regexp="^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message="Insira um telefone válido")
 	private String telefone;
 	
+	@URL(protocol="https", host="[facebook,twitter,github,instagram]", message="Insira uma URL válida")
 	private String redesSociais;
 	
 
@@ -53,6 +58,14 @@ public class Pessoa implements Serializable {
 		return idade;
 	}
 	
+	public String getEndereço() {
+		return endereço;
+	}
+
+	public void setEndereço(String endereço) {
+		this.endereço = endereço;
+	}
+
 	public void setIdade(String idade) {
 		this.idade = idade;
 	}

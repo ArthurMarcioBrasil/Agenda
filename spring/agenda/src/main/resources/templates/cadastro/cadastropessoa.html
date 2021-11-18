@@ -51,6 +51,12 @@ form input[type=submit] {
 				<i class="tiny material-icons">email</i> <label for="email">Email</label>
 				<input name="email" th:field="*{email}" class="validate" id="email">
 			</div>
+		</div>
+		<div class="row">
+			<div class="input-fiel col s6">
+				<i class="tiny material-icons">email</i> <label for="email">Email</label>
+				<input name="email" th:field="*{email}" class="validate" id="email">
+			</div>
 			<div class="input-fiel col s6">
 				<i class="tiny material-icons">phone</i> <label for="telefone">Telefone</label>
 				<input name="telefone" th:field="*{telefone}" class="validate"
@@ -101,6 +107,7 @@ form input[type=submit] {
 				<th>ID</th>
 				<th>Nome</th>
 				<th>Idade</th>
+				<th>Endereço</th>
 				<th>Email</th>
 				<th>Telefone</th>
 				<th>Redes sociais</th>
@@ -111,12 +118,13 @@ form input[type=submit] {
 				<td th:text="${pessoa.id}"></td>
 				<td><a><span th:text="${pessoa.nome}"></span></a></td>
 				<td th:text="${pessoa.idade}"></td>
+				<td th:text="${pessoa.endereço}"></td>
 				<td th:text="${pessoa.email}"></td>
 				<td th:text="${pessoa.telefone}"></td>
 				<td th:text="${pessoa.redesSociais}"></td>
 				<td><a
 					th:href="@{/editarpessoa/{idpessoa}(idpessoa=${pessoa.id})}">Editar</a></td>
-				<td><a
+				<td><a 
 					th:href="@{/excluirpessoa/{idpessoa}(idpessoa=${pessoa.id})}"
 					class="red-text">Excluir</a></td>
 			</tr>
