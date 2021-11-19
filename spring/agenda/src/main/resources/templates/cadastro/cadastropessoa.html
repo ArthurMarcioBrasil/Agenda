@@ -16,6 +16,11 @@
 form input[type=submit] {
 	color: white;
 }
+
+.nav-wrapper {
+	@extend .blue, .lighten-4;	
+}
+
 </style>
 
 
@@ -77,9 +82,10 @@ form input[type=submit] {
 				<b>Erro!</b> <span th:text="${m}"></span> <br />
 			</div>
 		</div>
-
-		<input class="waves-effect waves-light btn" type="submit"
-			value="Salvar"><i class="material-icons">check</i>
+		<div class="row">
+			<input class="waves-effect waves-light btn material-icons" type="submit"
+			value="Salvar">
+		</div>
 	</form>
 
 	<br />
