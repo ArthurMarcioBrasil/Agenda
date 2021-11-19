@@ -1,15 +1,12 @@
 package api.agenda.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
-
 import org.hibernate.validator.constraints.URL;
 
 
@@ -40,7 +37,7 @@ public class Pessoa implements Serializable {
 	@Pattern(regexp="^\\(?(?:[14689][1-9]|2[12478]|3[1234578]|5[1345]|7[134579])\\)? ?(?:[2-8]|9[1-9])[0-9]{3}\\-?[0-9]{4}$", message="Insira um telefone válido")
 	private String telefone;
 	
-	@URL(protocol="https", host="{facebook, twitter, github}", message="Insira uma URL válida")
+	@URL(protocol="https", message="Insira uma URL válida")
 	private String redesSociais;
 	
 
